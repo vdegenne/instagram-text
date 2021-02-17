@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@material/mwc-slider": "^0.20.0",
+    "@material/mwc-textarea": "^0.20.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@rollup/plugin-typescript": "^8.2.0",
+    "lit-element": "^2.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.1.5",
+    "vanilla-colorful": "^0.5.3"
+  }
+}
