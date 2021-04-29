@@ -1057,7 +1057,8 @@ var Nt=function(A,e){return(Nt=Object.setPrototypeOf||{__proto__:[]}instanceof A
       </div>
     </div>
 
-    <mwc-textarea label="text" outlined
+    <mwc-textarea label="text" outlined style="width:100%"
+      rows="20"
       @keyup="${A=>this.text=A.target.value}"></mwc-textarea>
 
     <mwc-slider min="5" max="100" step="1" pin markers style="width:640px"
