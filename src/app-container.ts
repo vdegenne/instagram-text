@@ -32,6 +32,8 @@ class AppContainer extends LitElement {
     padding: 32px;
     box-sizing: border-box;
     font-family: 'Nanum Myeongjo';
+    white-space: break-spaces;
+    line-height: 58px;
   }
   mwc-textarea {
     margin: 20px 0;
