@@ -11,5 +11,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.1.5",
     "vanilla-colorful": "^0.5.3"
+  },
+  "scripts": {
+    "build": "rollup -c"
   }
 }

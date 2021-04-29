@@ -1079,6 +1079,8 @@ var Nt=function(A,e){return(Nt=Object.setPrototypeOf||{__proto__:[]}instanceof A
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 32px;
+    box-sizing: border-box;
   }
   mwc-textarea {
     margin: 20px 0;

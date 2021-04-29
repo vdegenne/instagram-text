@@ -15,7 +15,7 @@ class AppContainer extends LitElement {
   backgroundColor = '#424242';
   @property()
   fontColor = '#ffffff';
-  
+
   static styles = css`
   :host {
     display: flex;
@@ -29,6 +29,8 @@ class AppContainer extends LitElement {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 32px;
+    box-sizing: border-box;
   }
   mwc-textarea {
     margin: 20px 0;
