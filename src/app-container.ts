@@ -62,7 +62,8 @@ class AppContainer extends LitElement {
       </div>
     </div>
 
-    <mwc-textarea label="text" outlined
+    <mwc-textarea label="text" outlined style="width:100%"
+      rows="20"
       @keyup="${e => this.text = e.target.value}"></mwc-textarea>
 
     <mwc-slider min="5" max="100" step="1" pin markers style="width:640px"
