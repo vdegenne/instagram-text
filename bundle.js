@@ -1083,6 +1083,8 @@ var Nt=function(A,e){return(Nt=Object.setPrototypeOf||{__proto__:[]}instanceof A
     padding: 32px;
     box-sizing: border-box;
     font-family: 'Nanum Myeongjo';
+    white-space: break-spaces;
+    line-height: 58px;
   }
   mwc-textarea {
     margin: 20px 0;
