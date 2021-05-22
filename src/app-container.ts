@@ -1,4 +1,5 @@
 import { LitElement, html, customElement, property, css } from "lit-element";
+import {unsafeHTML} from 'lit-html/directives/unsafe-html'
 import '@material/mwc-textarea'
 import '@material/mwc-slider'
 import '@material/mwc-button'
@@ -50,7 +51,7 @@ class AppContainer extends LitElement {
       }
     </style>
     <div style="display:flex;background-color:grey">
-      <div id="square">${this.text}</div>
+      <div id="square">${unsafeHTML(this.text)}</div>
       <div style="display:flex;flex-direction:column">
         <hex-color-picker
           style="margin:20px;"
