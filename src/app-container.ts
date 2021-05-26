@@ -30,6 +30,7 @@ class AppContainer extends LitElement {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 32px;
     box-sizing: border-box;
     font-family: 'Nanum Myeongjo';
@@ -66,7 +67,7 @@ class AppContainer extends LitElement {
     </div>
 
     <mwc-textarea label="text" outlined style="width:100%"
-      rows="20"
+      rows="6"
       @keyup="${e => this.text = e.target.value}"></mwc-textarea>
 
     <mwc-slider min="5" max="100" step="1" pin markers style="width:640px"
