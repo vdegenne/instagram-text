@@ -1,19 +1,19 @@
 {
   "devDependencies": {
-    "@material/mwc-button": "0.21.0",
-    "@material/mwc-slider": "0.21.0",
-    "@material/mwc-textarea": "0.21.0",
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "@rollup/plugin-typescript": "^8.2.0",
-    "@types/html2canvas": "^0.0.36",
-    "html2canvas": "^1.0.0-rc.7",
-    "lit-element": "^2.5.1",
-    "lit-html": "^1.4.1",
+    "@material/mwc-button": "^0.25.3",
+    "@material/mwc-slider": "^0.25.3",
+    "@material/mwc-textarea": "^0.25.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "html2canvas": "^1.4.1",
+    "lit": "^2.1.1",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.1.5",
+    "typescript": "^4.5.5",
     "vanilla-colorful": "^0.5.3"
   },
   "scripts": {
-    "build": "rollup -c"
+    "watch": "rollup -cw",
+    "build": "rollup -c",
+    "browser-sync": "browser-sync . --files bundle.js --no-notify"
   }
 }

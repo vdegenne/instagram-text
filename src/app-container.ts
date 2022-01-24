@@ -1,5 +1,6 @@
-import { LitElement, html, customElement, property, css } from "lit-element";
-import {unsafeHTML} from 'lit-html/directives/unsafe-html'
+import { LitElement, html, css } from 'lit'
+import { customElement, property, query, state } from 'lit/decorators.js';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js'
 import '@material/mwc-textarea'
 import '@material/mwc-slider'
 import '@material/mwc-button'
@@ -7,15 +8,17 @@ import 'vanilla-colorful'
 import html2canvas from 'html2canvas'
 
 @customElement('app-container')
-class AppContainer extends LitElement {
-  @property()
-  text = 'enter text';
+export class AppContainer extends LitElement {
+  @state()
+  private content = 'enter text';
   @property({type:Number})
   fontSize = 35;
-  @property()
+  @state()
   backgroundColor = '#424242';
-  @property()
+  @state()
   fontColor = '#ffffff';
+
+  @query('#square') square!: HTMLDivElement;
 
   static styles = css`
   :host {
@@ -51,8 +54,9 @@ class AppContainer extends LitElement {
         color: ${this.fontColor};
       }
     </style>
+
     <div style="display:flex;background-color:grey">
-      <div id="square">${unsafeHTML(this.text)}</div>
+      <div id="square">${unsafeHTML(this.content)}</div>
       <div style="display:flex;flex-direction:column">
         <hex-color-picker
           style="margin:20px;"
@@ -66,23 +70,26 @@ class AppContainer extends LitElement {
       </div>
     </div>
 
-    <mwc-textarea label="text" outlined style="width:100%"
+    <mwc-textarea label="text" style="width:100%"
       rows="6"
-      @keyup="${e => this.text = e.target.value}"></mwc-textarea>
+      @keyup="${e => { this.content = e.target.value }}"></mwc-textarea>
 
     <mwc-slider min="5" max="100" step="1" pin markers style="width:640px"
       value="${this.fontSize}" @input="${e => this.fontSize = e.target.value}"></mwc-slider>
     <div>font-size: ${this.fontSize}px</div>
 
     <mwc-button raised label="save"
-      @click="${_ => this.save()}"></mwc-button>
+      @click="${() => this.save()}"></mwc-button>
     `
   }
 
   async save() {
-    await html2canvas(this.shadowRoot!.querySelector<HTMLElement>('#square')!);
+    const canvas = await html2canvas(this.square);
+    // const dataURL = canvas.toDataURL()
+    const img = document.createElement('a')
+    img.href = canvas.toDataURL()
+    img.download = `instagram-img-${Date.now()}`
+    img.click()
+    // console.log(canvas.toDataURL())
   }
 }
-
-
-window.html2canvas = html2canvas;

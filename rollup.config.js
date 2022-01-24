@@ -4,6 +4,8 @@ import {terser} from 'rollup-plugin-terser'
 
 export default {
   input: 'src/app-container.ts',
-  output: { file: 'bundle.js', format: 'iife'},
-  plugins: [resolve(), typescript(), terser()]
+  output: { file: 'bundle.js', format: 'esm' },
+  plugins: [resolve(), typescript(),
+    terser()
+  ]
 }
